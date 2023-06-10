@@ -63,6 +63,13 @@ userRouter.post("/emi",emi,async (req,res)=>{
    }
 })
 
-userRouter.get("/emi",)
+userRouter.get("/profile",auth,(req,res)=>{
+    
+    try {
+      res.send({"data": req.body});
+    } catch (error) {
+      res.send({"msg":error})
+    }
+ })
 
 module.exports = userRouter
